@@ -5,3 +5,33 @@ Point 4. Create a requirements.txt file. Command : pip freeze > requirements.txt
 Point 5. Creat a folder called .ebextensions
 Point 6. Inside .ebextensions we need a python.config file.
 Point 7. Mention the commands in python.config
+
+
+
+GCP Cloud Deployment Steps:
+
+1. Go to GCP cloud and create a new project.
+2.Create a new config file named as app.yaml and put the below content inside this newly created file.
+
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT main:application
+
+runtime_config:
+  python_version: 3
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+3.Initialize a local git.
+     git init
+     git add .
+     git commit -m "any message"
+
+4. Go to your github.com and create a new repo.
+5. Push our code to our github repo.
+    git push github_repo 
