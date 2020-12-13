@@ -34,4 +34,10 @@ resources:
 
 4. Go to your github.com and create a new repo.
 5. Push our code to our github repo.
-    git push github_repo 
+    git push github_repo branch name
+
+6.Go to your GCP
+7. Click on "ACtivate Cloud shell"
+8. In cloud shell , clone your repo to this using:
+    git clone repo url
+9. On the cloud, nagate to your folder using same commands that you use on
